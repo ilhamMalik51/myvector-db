@@ -37,7 +37,7 @@ class VectorDB():
         return [ (self.content[index], cosine_sim[index]) for index in sorted_index ]
     
     def init_seed_data(self):
-        with open("./data/init_emb_data.json", 'r') as file:
+        with open("./data/insight_emb_data.json", 'r') as file:
             seed_data = json.load(file)
         
         for doc in seed_data:
