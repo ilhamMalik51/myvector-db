@@ -7,6 +7,7 @@ from schema.request import (
 
 app = FastAPI(title="My Vector DB", openapi_prefix="/api")
 vector_db = VectorDB()
+vector_db.init_seed_data()
 
 @app.get("/")
 def get_index():
@@ -27,6 +28,6 @@ async def insert_document(request: InsertDocumentRequest):
 
     return {"success": True}
 
-@app.get("/document")
+@app.get("/documents")
 async def get_documents():
     return {"data": vector_db.get_docs_size()}
